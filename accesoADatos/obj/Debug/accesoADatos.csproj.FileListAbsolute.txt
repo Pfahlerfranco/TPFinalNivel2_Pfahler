@@ -1,0 +1,9 @@
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\bin\Debug\accesoADatos.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\bin\Debug\accesoADatos.pdb
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\bin\Debug\dominio.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\bin\Debug\dominio.pdb
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\obj\Debug\accesoADatos.csproj.AssemblyReference.cache
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\obj\Debug\accesoADatos.csproj.CoreCompileInputs.cache
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\obj\Debug\accesoAD.6AB91FC8.Up2Date
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\obj\Debug\accesoADatos.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\accesoADatos\obj\Debug\accesoADatos.pdb

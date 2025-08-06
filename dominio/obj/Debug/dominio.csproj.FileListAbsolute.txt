@@ -1,0 +1,6 @@
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\dominio\bin\Debug\dominio.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\dominio\bin\Debug\dominio.pdb
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\dominio\obj\Debug\dominio.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\dominio\obj\Debug\dominio.pdb

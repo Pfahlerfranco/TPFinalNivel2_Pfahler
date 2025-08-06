@@ -1,0 +1,11 @@
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\bin\Debug\negocio.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\bin\Debug\negocio.pdb
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\bin\Debug\accesoADatos.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\bin\Debug\dominio.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\bin\Debug\accesoADatos.pdb
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\bin\Debug\dominio.pdb
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\obj\Debug\negocio.csproj.Up2Date
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\obj\Debug\negocio.dll
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\negocio\obj\Debug\negocio.pdb
