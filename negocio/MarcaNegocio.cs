@@ -2,44 +2,63 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using dominio;
 
 namespace negocio
 {
     public class MarcaNegocio
     {
+        private string connectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
+
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
-            SqlConnection conexion = new SqlConnection("server=.\\FRANZIER; database=CATALOGO_DB; integrated security=true");
-            SqlCommand comando = new SqlCommand("SELECT Id, Descripcion FROM Marcas", conexion);
 
-            try
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            using (SqlCommand comando = new SqlCommand("SELECT Id, Descripcion FROM Marcas", conexion))
             {
-                conexion.Open();
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                try
                 {
-                    Marca marca = new Marca();
-                    marca.Id = (int)lector["Id"];
-                    marca.Descripcion = lector["Descripcion"].ToString();
+                    conexion.Open();
+                    SqlDataReader lector = comando.ExecuteReader();
 
-                    lista.Add(marca);
+                    while (lector.Read())
+                    {
+                        Marca marca = new Marca
+                        {
+                            Id = (int)lector["Id"],
+                            Descripcion = lector["Descripcion"].ToString()
+                        };
+
+                        lista.Add(marca);
+                    }
                 }
+                catch
+                {
+                    throw;
+                }
+            }
 
-                return lista;
-            }
-            catch
+            return lista;
+        }
+
+        public int agregar(Marca marca)
+        {
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            using (SqlCommand comando = new SqlCommand(
+                "INSERT INTO Marcas (Descripcion) OUTPUT INSERTED.Id VALUES (@desc)", conexion))
             {
-                throw;
-            }
-            finally
-            {
-                conexion.Close();
+                comando.Parameters.AddWithValue("@desc", marca.Descripcion);
+
+                try
+                {
+                    conexion.Open();
+                    int nuevoId = Convert.ToInt32(comando.ExecuteScalar());
+                    return nuevoId;
+                }
+                catch
+                {
+                    throw;
+                }
             }
         }
     }

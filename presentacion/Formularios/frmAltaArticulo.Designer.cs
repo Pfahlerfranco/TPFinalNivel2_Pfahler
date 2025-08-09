@@ -47,6 +47,8 @@
             this.btCancel = new System.Windows.Forms.Button();
             this.btAcept = new System.Windows.Forms.Button();
             this.btAddImage = new System.Windows.Forms.Button();
+            this.btnNuevaCategoria = new System.Windows.Forms.Button();
+            this.btnNuevaMarca = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pxbArti)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,7 +162,7 @@
             this.txPrecio.Location = new System.Drawing.Point(180, 375);
             this.txPrecio.Name = "txPrecio";
             this.txPrecio.Size = new System.Drawing.Size(129, 20);
-            this.txPrecio.TabIndex = 6;
+            this.txPrecio.TabIndex = 7;
             // 
             // pxbArti
             // 
@@ -194,7 +196,7 @@
             this.btCancel.Location = new System.Drawing.Point(568, 481);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(142, 34);
-            this.btCancel.TabIndex = 15;
+            this.btCancel.TabIndex = 9;
             this.btCancel.Text = "Cancelar";
             this.btCancel.UseVisualStyleBackColor = false;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
@@ -205,7 +207,7 @@
             this.btAcept.Location = new System.Drawing.Point(399, 481);
             this.btAcept.Name = "btAcept";
             this.btAcept.Size = new System.Drawing.Size(142, 34);
-            this.btAcept.TabIndex = 7;
+            this.btAcept.TabIndex = 8;
             this.btAcept.Text = "Aceptar";
             this.btAcept.UseVisualStyleBackColor = false;
             this.btAcept.Click += new System.EventHandler(this.btAcept_Click);
@@ -216,10 +218,32 @@
             this.btAddImage.Location = new System.Drawing.Point(315, 322);
             this.btAddImage.Name = "btAddImage";
             this.btAddImage.Size = new System.Drawing.Size(25, 25);
-            this.btAddImage.TabIndex = 17;
+            this.btAddImage.TabIndex = 6;
             this.btAddImage.Text = "+";
             this.btAddImage.UseVisualStyleBackColor = false;
             this.btAddImage.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
+            // btnNuevaCategoria
+            // 
+            this.btnNuevaCategoria.BackColor = System.Drawing.Color.White;
+            this.btnNuevaCategoria.Location = new System.Drawing.Point(315, 275);
+            this.btnNuevaCategoria.Name = "btnNuevaCategoria";
+            this.btnNuevaCategoria.Size = new System.Drawing.Size(25, 25);
+            this.btnNuevaCategoria.TabIndex = 13;
+            this.btnNuevaCategoria.Text = "+";
+            this.btnNuevaCategoria.UseVisualStyleBackColor = false;
+            this.btnNuevaCategoria.Click += new System.EventHandler(this.btnNuevaCategoria_Click);
+            // 
+            // btnNuevaMarca
+            // 
+            this.btnNuevaMarca.BackColor = System.Drawing.Color.White;
+            this.btnNuevaMarca.Location = new System.Drawing.Point(315, 224);
+            this.btnNuevaMarca.Name = "btnNuevaMarca";
+            this.btnNuevaMarca.Size = new System.Drawing.Size(25, 25);
+            this.btnNuevaMarca.TabIndex = 14;
+            this.btnNuevaMarca.Text = "+";
+            this.btnNuevaMarca.UseVisualStyleBackColor = false;
+            this.btnNuevaMarca.Click += new System.EventHandler(this.btnNuevaMarca_Click);
             // 
             // frmAltaArticulo
             // 
@@ -227,6 +251,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(722, 527);
+            this.Controls.Add(this.btnNuevaMarca);
+            this.Controls.Add(this.btnNuevaCategoria);
             this.Controls.Add(this.btAddImage);
             this.Controls.Add(this.btAcept);
             this.Controls.Add(this.btCancel);
@@ -246,8 +272,9 @@
             this.Controls.Add(this.lbCod);
             this.Controls.Add(this.lbNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmAltaArticulo";
-            this.Text = "frmAltaArticulo";
+            this.Text = "Alta Articulo";
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pxbArti)).EndInit();
             this.ResumeLayout(false);
@@ -275,5 +302,7 @@
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btAcept;
         private System.Windows.Forms.Button btAddImage;
+        private System.Windows.Forms.Button btnNuevaCategoria;
+        private System.Windows.Forms.Button btnNuevaMarca;
     }
 }

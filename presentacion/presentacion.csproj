@@ -33,9 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +54,18 @@
     </Compile>
     <Compile Include="Formularios\frmAltaArticulo.Designer.cs">
       <DependentUpon>frmAltaArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmAltaMarcaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAltaMarcaCategoria.Designer.cs">
+      <DependentUpon>frmAltaMarcaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmayuda.Designer.cs">
+      <DependentUpon>frmayuda.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmStockeatro.cs">
       <SubType>Form</SubType>
@@ -70,6 +84,15 @@
     <EmbeddedResource Include="Formularios\frmAltaArticulo.resx">
       <DependentUpon>frmAltaArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAltaMarcaCategoria.resx">
+      <DependentUpon>frmAltaMarcaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmayuda.aa-ER.resx">
+      <DependentUpon>frmayuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmayuda.resx">
+      <DependentUpon>frmayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmStockeatro.resx">
       <DependentUpon>frmStockeatro.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

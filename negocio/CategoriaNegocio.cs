@@ -2,44 +2,62 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using dominio;
 
 namespace negocio
 {
     public class CategoriaNegocio
     {
+        private string connectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
+
         public List<Categoria> listar()
         {
             List<Categoria> lista = new List<Categoria>();
-            SqlConnection conexion = new SqlConnection("server=.\\FRANZIER; database=CATALOGO_DB; integrated security=true");
-            SqlCommand comando = new SqlCommand("SELECT Id, Descripcion FROM Categorias", conexion);
 
-            try
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            using (SqlCommand comando = new SqlCommand("SELECT Id, Descripcion FROM Categorias", conexion))
             {
-                conexion.Open();
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                try
                 {
-                    Categoria categoria = new Categoria();
-                    categoria.Id = (int)lector["Id"];
-                    categoria.Descripcion = lector["Descripcion"].ToString();
+                    conexion.Open();
+                    SqlDataReader lector = comando.ExecuteReader();
 
-                    lista.Add(categoria);
+                    while (lector.Read())
+                    {
+                        Categoria categoria = new Categoria
+                        {
+                            Id = (int)lector["Id"],
+                            Descripcion = lector["Descripcion"].ToString()
+                        };
+
+                        lista.Add(categoria);
+                    }
                 }
+                catch
+                {
+                    throw;
+                }
+            }
 
-                return lista;
-            }
-            catch
+            return lista;
+        }
+        public int agregar(Categoria categoria)
+        {
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            using (SqlCommand comando = new SqlCommand(
+                "INSERT INTO Categorias (Descripcion) OUTPUT INSERTED.Id VALUES (@desc)", conexion))
             {
-                throw;
-            }
-            finally
-            {
-                conexion.Close();
+                comando.Parameters.AddWithValue("@desc", categoria.Descripcion);
+
+                try
+                {
+                    conexion.Open();
+                    int nuevoId = Convert.ToInt32(comando.ExecuteScalar());
+                    return nuevoId;
+                }
+                catch
+                {
+                    throw;
+                }
             }
         }
     }

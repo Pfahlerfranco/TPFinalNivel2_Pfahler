@@ -40,7 +40,6 @@
             this.menuBuscar = new System.Windows.Forms.ToolStripMenuItem();
             this.filtroAvanzandoSM = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAyuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbxStock = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lbBuscarSimple = new System.Windows.Forms.Label();
@@ -79,8 +78,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuInventario,
             this.menuBuscar,
-            this.menuAyuda,
-            this.acercaDeToolStripMenuItem});
+            this.menuAyuda});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1182, 24);
@@ -100,21 +98,21 @@
             // agregarSM
             // 
             this.agregarSM.Name = "agregarSM";
-            this.agregarSM.Size = new System.Drawing.Size(180, 22);
+            this.agregarSM.Size = new System.Drawing.Size(125, 22);
             this.agregarSM.Text = "Agregar";
             this.agregarSM.Click += new System.EventHandler(this.agregarSM_Click);
             // 
             // modificarSM
             // 
             this.modificarSM.Name = "modificarSM";
-            this.modificarSM.Size = new System.Drawing.Size(180, 22);
+            this.modificarSM.Size = new System.Drawing.Size(125, 22);
             this.modificarSM.Text = "Modificar";
             this.modificarSM.Click += new System.EventHandler(this.modificarSM_Click);
             // 
             // eliminarSM
             // 
             this.eliminarSM.Name = "eliminarSM";
-            this.eliminarSM.Size = new System.Drawing.Size(180, 22);
+            this.eliminarSM.Size = new System.Drawing.Size(125, 22);
             this.eliminarSM.Text = "Eliminar";
             this.eliminarSM.Click += new System.EventHandler(this.eliminarSM_Click);
             // 
@@ -129,7 +127,7 @@
             // filtroAvanzandoSM
             // 
             this.filtroAvanzandoSM.Name = "filtroAvanzandoSM";
-            this.filtroAvanzandoSM.Size = new System.Drawing.Size(180, 22);
+            this.filtroAvanzandoSM.Size = new System.Drawing.Size(161, 22);
             this.filtroAvanzandoSM.Text = "Filtro avanzando";
             this.filtroAvanzandoSM.Click += new System.EventHandler(this.filtroAvanzandoSM_Click);
             // 
@@ -139,13 +137,6 @@
             this.menuAyuda.Size = new System.Drawing.Size(53, 20);
             this.menuAyuda.Text = "Ayuda";
             this.menuAyuda.Click += new System.EventHandler(this.menuAyuda_Click);
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // pbxStock
             // 
@@ -229,6 +220,7 @@
             this.Controls.Add(this.menuStrip);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Stockeatro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stockeator";
@@ -255,7 +247,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuAyuda;
         private System.Windows.Forms.PictureBox pbxStock;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.Label lbBuscarSimple;
         private System.Windows.Forms.TextBox txBuscarSimple;
         private System.Windows.Forms.Label lblFiltroAvanzado;

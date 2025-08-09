@@ -26,9 +26,6 @@ namespace presentacion
         private void Stockeatro_Load(object sender, EventArgs e)
         {
             cargar();
-            //    cboCampo.Items.Add("Número");         VER QUE VA ACA
-            //    cboCampo.Items.Add("Nombre");
-            //    cboCampo.Items.Add("Descripción");
         }
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
@@ -78,8 +75,6 @@ namespace presentacion
         }
 
 
-       //-------------------------------------------------------
-
         private void agregarSM_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();
@@ -113,7 +108,7 @@ namespace presentacion
                     {
                         negocio.eliminar(seleccionado.Id);
                         MessageBox.Show("Artículo eliminado correctamente.");
-                        cargar(); // Actualiza el DataGridView
+                        cargar();
                     }
                     catch (Exception ex)
                     {
@@ -148,7 +143,6 @@ namespace presentacion
             cbFiltroAvanzado.Visible = true;
             cbFiltroAvanzado.Items.Clear();
 
-            // Podés elegir si querés mostrar marcas o categorías (acá ejemplo con Categoría)
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             cbFiltroAvanzado.DataSource = categoriaNegocio.listar();
             cbFiltroAvanzado.DisplayMember = "Descripcion";
@@ -170,16 +164,9 @@ namespace presentacion
 
         private void btnQuitarFiltro_Click(object sender, EventArgs e)
         {
-            /*cbFiltroAvanzado.Visible = false;
-            lblFiltroAvanzado.Visible = false;
-            cbFiltroAvanzado.DataSource = null;
-            txBuscarSimple.Text = "";
-            dgvStock.DataSource = listaArticulos;
-            ocultarColumnas();*/
-
             cbFiltroAvanzado.Visible = false;
             lblFiltroAvanzado.Visible = false;
-            btnQuitarFiltro.Visible = false; // lo ocultamos de nuevo
+            btnQuitarFiltro.Visible = false; 
 
             cbFiltroAvanzado.DataSource = null;
             txBuscarSimple.Text = "";
@@ -190,12 +177,8 @@ namespace presentacion
 
         private void menuAyuda_Click(object sender, EventArgs e)
         {
-            //aca va info de ayuda
-        }
-
-        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //aca va la info mia
+            frmayuda frm = new frmayuda();
+            frm.ShowDialog();
         }
     }
 }

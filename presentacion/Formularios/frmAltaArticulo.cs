@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using System.Data.SqlClient;
+using System.Collections.Generic;
+using Microsoft.VisualBasic; 
 using dominio;
 using negocio;
-using System.Configuration;
-using System.IO;
 
 namespace presentacion.Formularios
 {
@@ -20,6 +18,7 @@ namespace presentacion.Formularios
     {
         private Articulo articulo = null;
         private OpenFileDialog archivo = null;
+
         public frmAltaArticulo()
         {
             InitializeComponent();
@@ -34,27 +33,24 @@ namespace presentacion.Formularios
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
-                CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-                MarcaNegocio marcaNegocio = new MarcaNegocio();
-
-                cbCategoria.DataSource = categoriaNegocio.listar();
-                cbCategoria.ValueMember = "Id";
-                cbCategoria.DisplayMember = "Descripcion";
-
-                cbMarca.DataSource = marcaNegocio.listar();
-                cbMarca.ValueMember = "Id";
-                cbMarca.DisplayMember = "Descripcion";
+                
+                CargarCombos();
 
                 if (articulo != null)
                 {
                     txNombre.Text = articulo.Nombre;
                     txCod.Text = articulo.Codigo;
                     txDescrip.Text = articulo.Descripcion;
-                    cbCategoria.SelectedValue = articulo.Categoria.Id;
-                    cbMarca.SelectedValue = articulo.Marca.Id;
+
+                    
+                    if (articulo.Categoria != null)
+                        cbCategoria.SelectedValue = articulo.Categoria.Id;
+                    if (articulo.Marca != null)
+                        cbMarca.SelectedValue = articulo.Marca.Id;
+
+                    txImage.Text = articulo.ImagenUrl;
                     cargarImagen(articulo.ImagenUrl);
                     txPrecio.Text = articulo.Precio.ToString();
                 }
@@ -63,7 +59,27 @@ namespace presentacion.Formularios
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
 
+        
+        private void CargarCombos(int? idCategoriaSeleccionar = null, int? idMarcaSeleccionar = null)
+        {
+            var categoriaNegocio = new CategoriaNegocio();
+            var marcaNegocio = new MarcaNegocio();
+
+            cbCategoria.DataSource = categoriaNegocio.listar();
+            cbCategoria.ValueMember = "Id";
+            cbCategoria.DisplayMember = "Descripcion";
+
+            cbMarca.DataSource = marcaNegocio.listar();
+            cbMarca.ValueMember = "Id";
+            cbMarca.DisplayMember = "Descripcion";
+
+            if (idCategoriaSeleccionar.HasValue)
+                cbCategoria.SelectedValue = idCategoriaSeleccionar.Value;
+
+            if (idMarcaSeleccionar.HasValue)
+                cbMarca.SelectedValue = idMarcaSeleccionar.Value;
         }
 
         private void btAcept_Click(object sender, EventArgs e)
@@ -76,10 +92,19 @@ namespace presentacion.Formularios
 
                 articulo.Nombre = txNombre.Text;
                 articulo.Codigo = txCod.Text;
-                articulo.Descripcion = txDescrip.Text;              
+                articulo.Descripcion = txDescrip.Text;
                 articulo.Marca = (Marca)cbMarca.SelectedItem;
-                articulo.Categoria= (Categoria)cbCategoria.SelectedItem;
-                articulo.ImagenUrl = txImage.Text;
+                articulo.Categoria = (Categoria)cbCategoria.SelectedItem;
+
+                string imagenParaBD = txImage.Text;
+
+                if (archivo != null && !EsUrl(archivo.FileName))
+                {
+                    imagenParaBD = CopiarImagenLocal(archivo.FileName);
+                }
+
+                articulo.ImagenUrl = imagenParaBD;
+
                 decimal.TryParse(txPrecio.Text, out decimal precio);
                 articulo.Precio = precio;
 
@@ -94,12 +119,7 @@ namespace presentacion.Formularios
                     MessageBox.Show("Agregado exitosamente");
                 }
 
-                //Guardo imagen si la levantó localmente:
-                if (archivo != null && !(txImage.Text.ToUpper().Contains("HTTP")))
-                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
-
                 Close();
-
             }
             catch (Exception ex)
             {
@@ -121,7 +141,21 @@ namespace presentacion.Formularios
         {
             try
             {
-                pxbArti.Load(imagen);
+                if (string.IsNullOrWhiteSpace(imagen))
+                    throw new Exception("sin imagen");
+
+                if (EsUrl(imagen))
+                {
+                    pxbArti.Load(imagen);
+                }
+                else
+                {
+                    string ruta = imagen;
+                    if (!Path.IsPathRooted(ruta))
+                        ruta = Path.Combine(Application.StartupPath, imagen);
+
+                    pxbArti.Load(ruta);
+                }
             }
             catch
             {
@@ -131,17 +165,82 @@ namespace presentacion.Formularios
 
         private void btnAgregarImagen_Click(object sender, EventArgs e)
         {
-            archivo = new OpenFileDialog();
-            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            archivo = new OpenFileDialog
+            {
+                Filter = "Imágenes|*.jpg;*.jpeg;*.png;*.gif;*.bmp",
+                RestoreDirectory = true
+            };
+
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txImage.Text = archivo.FileName;
                 cargarImagen(archivo.FileName);
-
-                //guardo la imagen
-                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
             }
+        }
 
+        private string CopiarImagenLocal(string origenAbsoluto)
+        {
+            if (!File.Exists(origenAbsoluto))
+                throw new FileNotFoundException("La imagen de origen no existe.", origenAbsoluto);
+
+            string fileName = Path.GetFileName(origenAbsoluto);
+            string carpetaDestino = Path.Combine(Application.StartupPath, "images");
+            Directory.CreateDirectory(carpetaDestino);
+            string destinoAbsoluto = Path.Combine(carpetaDestino, fileName);
+
+            if (!string.Equals(origenAbsoluto, destinoAbsoluto, StringComparison.OrdinalIgnoreCase))
+                File.Copy(origenAbsoluto, destinoAbsoluto, true);
+
+            return Path.Combine("images", fileName);
+        }
+
+        private bool EsUrl(string s)
+            => !string.IsNullOrEmpty(s) && s.StartsWith("http", StringComparison.OrdinalIgnoreCase);
+
+
+        private void btnNuevaCategoria_Click(object sender, EventArgs e)
+        {
+            string desc = Interaction.InputBox("Descripción de la nueva categoría:", "Nueva categoría", "");
+            if (string.IsNullOrWhiteSpace(desc)) return;
+
+            try
+            {
+                var catNeg = new CategoriaNegocio();
+
+
+                catNeg.agregar(new Categoria { Descripcion = desc });
+                CargarCombos();
+                var lista = (List<Categoria>)cbCategoria.DataSource;
+                var recienCreada = lista.FirstOrDefault(c => string.Equals(c.Descripcion, desc, StringComparison.OrdinalIgnoreCase));
+                if (recienCreada != null)
+                    cbCategoria.SelectedValue = recienCreada.Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo crear la categoría: " + ex.Message);
+            }
+        }
+
+        private void btnNuevaMarca_Click(object sender, EventArgs e)
+        {
+            string desc = Interaction.InputBox("Descripción de la nueva marca:", "Nueva marca", "");
+            if (string.IsNullOrWhiteSpace(desc)) return;
+
+            try
+            {
+                var marcaNeg = new MarcaNegocio();
+
+                marcaNeg.agregar(new Marca { Descripcion = desc });
+                CargarCombos();
+                var lista = (List<Marca>)cbMarca.DataSource;
+                var recienCreada = lista.FirstOrDefault(m => string.Equals(m.Descripcion, desc, StringComparison.OrdinalIgnoreCase));
+                if (recienCreada != null)
+                    cbMarca.SelectedValue = recienCreada.Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo crear la marca: " + ex.Message);
+            }
         }
     }
 }

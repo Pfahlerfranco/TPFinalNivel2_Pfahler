@@ -17,7 +17,7 @@ namespace accesoADatos
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\FRANZIER; database=CATALOGO_DB; integrated security=true"); // CAMBIAR POR SQLEXPRESS
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
             comando = new SqlCommand();
         }
 

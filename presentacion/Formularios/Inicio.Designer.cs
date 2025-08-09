@@ -32,8 +32,8 @@
             this.btInicio = new System.Windows.Forms.Button();
             this.pbxIcono = new System.Windows.Forms.PictureBox();
             this.lbUser = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.lbPassware = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIcono)).BeginInit();
             this.SuspendLayout();
@@ -63,36 +63,36 @@
             this.lbUser.AutoSize = true;
             this.lbUser.BackColor = System.Drawing.Color.Transparent;
             this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.Location = new System.Drawing.Point(164, 217);
+            this.lbUser.Location = new System.Drawing.Point(126, 217);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(81, 24);
+            this.lbUser.Size = new System.Drawing.Size(150, 24);
             this.lbUser.TabIndex = 2;
-            this.lbUser.Text = "Usuario";
+            this.lbUser.Text = "Usuario: admin";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 244);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtUsuario.Location = new System.Drawing.Point(109, 244);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(199, 20);
+            this.txtUsuario.TabIndex = 3;
             // 
-            // textBox2
+            // txtContrasena
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 338);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtContrasena.Location = new System.Drawing.Point(109, 338);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(199, 20);
+            this.txtContrasena.TabIndex = 4;
             // 
             // lbPassware
             // 
             this.lbPassware.AutoSize = true;
             this.lbPassware.BackColor = System.Drawing.Color.Transparent;
             this.lbPassware.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassware.Location = new System.Drawing.Point(150, 311);
+            this.lbPassware.Location = new System.Drawing.Point(120, 311);
             this.lbPassware.Name = "lbPassware";
-            this.lbPassware.Size = new System.Drawing.Size(116, 24);
+            this.lbPassware.Size = new System.Drawing.Size(178, 24);
             this.lbPassware.TabIndex = 5;
-            this.lbPassware.Text = "Contraseña";
+            this.lbPassware.Text = "Contraseña : 1234";
             // 
             // Inicio
             // 
@@ -101,12 +101,13 @@
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(440, 511);
             this.Controls.Add(this.lbPassware);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.pbxIcono);
             this.Controls.Add(this.btInicio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
@@ -122,8 +123,8 @@
         private System.Windows.Forms.Button btInicio;
         private System.Windows.Forms.PictureBox pbxIcono;
         private System.Windows.Forms.Label lbUser;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label lbPassware;
     }
 }
