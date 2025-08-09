@@ -180,5 +180,20 @@ namespace presentacion
             frmayuda frm = new frmayuda();
             frm.ShowDialog();
         }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvStock.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un artículo para ver su detalle.");
+                return;
+            }
+
+            var articulo = (Articulo)dgvStock.CurrentRow.DataBoundItem;
+            using (var frm = new frmDetalleArticulo(articulo))
+            {
+                frm.ShowDialog(this);
+            }
+        }
     }
 }

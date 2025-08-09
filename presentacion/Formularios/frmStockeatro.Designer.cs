@@ -47,6 +47,7 @@
             this.lblFiltroAvanzado = new System.Windows.Forms.Label();
             this.cbFiltroAvanzado = new System.Windows.Forms.ComboBox();
             this.btnQuitarFiltro = new System.Windows.Forms.Button();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStock)).BeginInit();
@@ -203,6 +204,16 @@
             this.btnQuitarFiltro.Visible = false;
             this.btnQuitarFiltro.Click += new System.EventHandler(this.btnQuitarFiltro_Click);
             // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Location = new System.Drawing.Point(921, 553);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnVerDetalle.TabIndex = 8;
+            this.btnVerDetalle.Text = "Ver Detalle";
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
             // Stockeatro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +221,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(1182, 658);
+            this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.btnQuitarFiltro);
             this.Controls.Add(this.cbFiltroAvanzado);
             this.Controls.Add(this.lblFiltroAvanzado);
@@ -252,6 +264,7 @@
         private System.Windows.Forms.Label lblFiltroAvanzado;
         private System.Windows.Forms.ComboBox cbFiltroAvanzado;
         private System.Windows.Forms.Button btnQuitarFiltro;
+        private System.Windows.Forms.Button btnVerDetalle;
     }
 }
 

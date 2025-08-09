@@ -22,3 +22,4 @@ D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\presentac
 D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\presentacion\obj\Debug\presentacion.Formularios.frmayuda.aa-ER.resources
 D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\presentacion\obj\Debug\aa-ER\presentacion.resources.dll
 D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\presentacion\obj\Debug\presentacion.Formularios.frmAltaMarcaCategoria.resources
+D:\Universidad\Curso Maxi Programa\C# Nivel 2 .1\TPFinalNivel2_Pfahler\presentacion\obj\Debug\presentacion.Formularios.frmDetalleArticulo.resources

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29575CF9-B5F8-4A1E-8B69-CFF2C397862D}|presentacion\\presentacion.csproj|d:\\universidad\\curso maxi programa\\c# nivel 2 .1\\tpfinalnivel2_pfahler\\presentacion\\formularios\\frmaltamarcacategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{29575CF9-B5F8-4A1E-8B69-CFF2C397862D}|presentacion\\presentacion.csproj|solutionrelative:presentacion\\formularios\\frmaltamarcacategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9CAE1E95-D4FE-4BFD-A3B5-C9DD813427EB}|accesoADatos\\accesoADatos.csproj|d:\\universidad\\curso maxi programa\\c# nivel 2 .1\\tpfinalnivel2_pfahler\\accesoadatos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CAE1E95-D4FE-4BFD-A3B5-C9DD813427EB}|accesoADatos\\accesoADatos.csproj|solutionrelative:accesoadatos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED03CFB0-E769-4E1E-97CD-43105C41A4D1}|negocio\\negocio.csproj|d:\\universidad\\curso maxi programa\\c# nivel 2 .1\\tpfinalnivel2_pfahler\\negocio\\categorianegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED03CFB0-E769-4E1E-97CD-43105C41A4D1}|negocio\\negocio.csproj|solutionrelative:negocio\\categorianegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED03CFB0-E769-4E1E-97CD-43105C41A4D1}|negocio\\negocio.csproj|d:\\universidad\\curso maxi programa\\c# nivel 2 .1\\tpfinalnivel2_pfahler\\negocio\\marcanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED03CFB0-E769-4E1E-97CD-43105C41A4D1}|negocio\\negocio.csproj|solutionrelative:negocio\\marcanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +35,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmAltaMarcaCategoria.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\presentacion\\Formularios\\frmAltaMarcaCategoria.cs",
-              "RelativeDocumentMoniker": "presentacion\\Formularios\\frmAltaMarcaCategoria.cs",
-              "ToolTip": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\presentacion\\Formularios\\frmAltaMarcaCategoria.cs [Dise\u00F1o]",
-              "RelativeToolTip": "presentacion\\Formularios\\frmAltaMarcaCategoria.cs [Dise\u00F1o]",
+              "Title": "AccesoDatos.cs",
+              "DocumentMoniker": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\accesoADatos\\AccesoDatos.cs",
+              "RelativeDocumentMoniker": "accesoADatos\\AccesoDatos.cs",
+              "ToolTip": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\accesoADatos\\AccesoDatos.cs",
+              "RelativeToolTip": "accesoADatos\\AccesoDatos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T21:17:33.692Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-08-09T21:37:02.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoriaNegocio.cs",
+              "DocumentMoniker": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\negocio\\CategoriaNegocio.cs",
+              "RelativeDocumentMoniker": "negocio\\CategoriaNegocio.cs",
+              "ToolTip": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\negocio\\CategoriaNegocio.cs",
+              "RelativeToolTip": "negocio\\CategoriaNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T21:37:00.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MarcaNegocio.cs",
+              "DocumentMoniker": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\negocio\\MarcaNegocio.cs",
+              "RelativeDocumentMoniker": "negocio\\MarcaNegocio.cs",
+              "ToolTip": "D:\\Universidad\\Curso Maxi Programa\\C# Nivel 2 .1\\TPFinalNivel2_Pfahler\\negocio\\MarcaNegocio.cs",
+              "RelativeToolTip": "negocio\\MarcaNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T21:37:00.164Z",
+              "EditorCaption": ""
             }
           ]
         }
